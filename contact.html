@@ -1,47 +1,89 @@
+
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact section</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="contact.css">
+    <script src="contact.js" defer></script>
 </head>
 <body>
-    <div class="container" >
-        <div style="text-align: center;">
-            <h2>
-                Contact Us
-            </h2>
-            <p>
-                swing by for some rice, or 
-                leave us a message: 
-                
-            </p>
+    <main class="container">
+        <header class="page-header">
+            <h1>Contact Us</h1>
+            <p>Swing by for some rice, or leave us a message.</p>
+            <p id="auth-status" class="auth-status" aria-live="polite"></p>
+        </header>
+        <section id="login-panel" class="login-panel" aria-labelledby="login-title">
+            <h2 id="login-title">Sign in to send a message</h2>
+            <form id="login-form" novalidate>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" minlength="6" required>
+                <button type="submit">Sign in</button>
+                <p id="login-message" class="form-message" aria-live="polite"></p>
+            </form>
+        </section>
+        <section id="contact-panel" class="contact-panel" hidden>
             <div class="row">
+                <div class="column"><img src="cynthia.png" alt="Contact us" class="contact-image"></div>
                 <div class="column">
-                    <img src="cynthia.png" style="width: 100%;">
-                </div>
-                <div class="column">
-                    <form action="#">
+                    <form id="contact-form" action="#" novalidate>
                         <label for="fname">First Name</label>
-                        <input type="text"  name="fname" id="fname" placeholder="Your name is...."> 
+                        <input type="text" name="fname" id="fname" placeholder="Your name is..." required>
                         <label for="lname">Last Name</label>
-                        <input type="text" name="lname" id="lname"
-                        placeholder="Your last name is....">
-                        <label for="counttry">country</label>
-                        <select name="country" id="country">
+                        <input type="text" name="lname" id="lname" placeholder="Your last name is..." required>
+                        <label for="country">Country</label>
+                        <select name="country" id="country" required>
+                            <option value="">Choose a country</option>
                             <option value="america">America</option>
+                            <option value="australia">Australia</option>
                             <option value="austria">Austria</option>
-                            <option value="canada">Canada</option>
+                            <option value="belgium">Belgium</option>
+                            <option value="brazil">Brazil</option>
                             <option value="cameroon">Cameroon</option>
+                            <option value="canada">Canada</option>
+                            <option value="china">China</option>
+                            <option value="denmark">Denmark</option>
+                            <option value="egypt">Egypt</option>
+                            <option value="ethiopia">Ethiopia</option>
+                            <option value="france">France</option>
+                            <option value="germany">Germany</option>
+                            <option value="ghana">Ghana</option>
+                            <option value="india">India</option>
+                            <option value="ireland">Ireland</option>
+                            <option value="italy">Italy</option>
+                            <option value="japan">Japan</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="mexico">Mexico</option>
+                            <option value="morocco">Morocco</option>
+                            <option value="netherlands">Netherlands</option>
+                            <option value="new-zealand">New Zealand</option>
+                            <option value="nigeria">Nigeria</option>
+                            <option value="norway">Norway</option>
+                            <option value="portugal">Portugal</option>
+                            <option value="south-africa">South Africa</option>
+                            <option value="south-korea">South Korea</option>
+                            <option value="spain">Spain</option>
+                            <option value="sweden">Sweden</option>
+                            <option value="switzerland">Switzerland</option>
+                            <option value="tanzania">Tanzania</option>
+                            <option value="united-kingdom">United Kingdom</option>
+                            <option value="united-states">United States</option>
+                            <option value="zambia">Zambia</option>
+                            <option value="zimbabwe">Zimbabwe</option>
                         </select>
                         <label for="subject">Subject</label>
-                        <textarea name="subject" id="subject" 
-                        placeholder="Write something .... " style="height: 170px;"></textarea>
-                        <input type="Submit" value="Submit">
-
+                        <textarea name="subject" id="subject" placeholder="Write something..." required></textarea>
+                        <button type="submit">Submit</button>
+                        <p id="contact-message" class="form-message" aria-live="polite"></p>
                     </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+        <button id="logout-button" class="logout-button" type="button" hidden>Sign out</button>
+    </main>
 </body>
 </html>
